@@ -1,9 +1,9 @@
-public class Test {
+public class ThreadTest {
 
 	private Integer b = 0;
 
 	public static void main(String[] args) throws InterruptedException {
-		Test test = new Test();
+		ThreadTest test = new ThreadTest();
 		ThreadTest1 t1 = test.new ThreadTest1();
 		ThreadTest1 t2 = test.new ThreadTest1();
 		t1.start();
