@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class StringTest02 {
 	
 	public static void main(String[] args) {
@@ -5,6 +7,12 @@ public class StringTest02 {
 		System.out.println(a.intern() == a);
 		String b = new StringBuilder("ja").append("va").toString();
 		System.out.println(b.intern() == b);
+
+
+		String c = "中国" + "很大";
+		System.out.println(Objects.equals(c.intern(), c));
+		String d = "ja" + "va";
+		System.out.println(Objects.equals(d.intern(), d));
 	}
 
 	//result
