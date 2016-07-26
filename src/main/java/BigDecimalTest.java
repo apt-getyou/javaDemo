@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * @author 刘博文
@@ -20,5 +21,12 @@ public class BigDecimalTest {
         /**
          * 结果并不是2.59，而是2.60
          */
+
+
+        a = new BigDecimal("11276");
+        b = new BigDecimal("11276.000000");
+        System.out.print("a  " + a + "\n");
+        System.out.print("b  " + b + "\n");
+        System.out.print(Objects.equals(a.setScale(2,BigDecimal.ROUND_UP),b.setScale(2,BigDecimal.ROUND_UP)) + "\n");
     }
 }
