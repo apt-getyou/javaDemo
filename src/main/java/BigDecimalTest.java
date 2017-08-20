@@ -17,7 +17,7 @@ public class BigDecimalTest {
         BigDecimal d = new BigDecimal(0.01);
         System.out.print("c   :" + c + "\n");
         System.out.print("d   :" + d + "\n");
-        System.out.print(c.subtract(d).setScale(2,BigDecimal.ROUND_UP));
+        System.out.print(c.subtract(d).setScale(2,BigDecimal.ROUND_UP) + "\n");
         /**
          * 结果并不是2.59，而是2.60
          */
