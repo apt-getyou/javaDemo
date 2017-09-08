@@ -69,6 +69,7 @@ public class Stack {
 
 	public static void main(String[] args) throws CloneNotSupportedException {
 		Stack stack1 = new Stack();
+		// CloneNotSupportedException
 		System.out.print(stack1.clone() != stack1);
 	}
 }
