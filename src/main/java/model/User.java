@@ -33,4 +33,12 @@ public class User implements Serializable {
 	public void setTestStatic(String testStatic) {
 		User.testStatic = testStatic;
 	}
+
+
+	@Override
+	public String toString() {
+		return "User{" + "username='" + username + '\'' +
+				", password='" + password + '\'' +
+				'}';
+	}
 }

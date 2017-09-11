@@ -1,6 +1,7 @@
 package com.banhujiu.test;
 
 import model.User;
+import utils.FileUtils;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -10,6 +11,9 @@ import java.io.ObjectOutputStream;
 import java.net.URL;
 
 import org.junit.Test;
+
+import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
 
 /**
  * @author 刘博文
@@ -38,7 +42,7 @@ public class TransientTest {
 		ObjectOutputStream os = null;
 
 		Thread.currentThread().getContextClassLoader().getResource("");
-		String fileLocation = getFileLocation();
+		String fileLocation = FileUtils.getClassPatchFileLocation("user.txt");
 		try {
 			os = new ObjectOutputStream(new FileOutputStream(fileLocation));
 			os.writeObject(user); // 将User对象写进文件
@@ -83,38 +87,29 @@ public class TransientTest {
 	}
 
 	@Test
-	public void testLocation(){
+	public void test_json_for_transient() {
+		Gson gson = new Gson();
+		User user = new User();
+		user.setUsername("Alexia");
+		user.setPassword("123456");
+
+
+		System.out.println(user.toString());
+
+		// Gson
+		System.out.println(gson.fromJson(gson.toJson(user), User.class).toString());
+
+		// FastJson
+		System.out.println(JSON.parseObject(JSON.toJSONString(user), User.class).toString());
+	}
+
+	@Test
+	public void testLocation() {
 		URL resource = Thread.currentThread().getContextClassLoader().getResource("");
 		assert resource != null;
 		System.out.println(resource.toString());
 	}
 
-	@Test
-	public void test_getFileLocation(){
-		System.out.println(getFileLocation());
-	}
-
-
-	private String getFileLocation(){
-		URL resource = Thread.currentThread().getContextClassLoader().getResource("");
-		assert resource != null;
-		String proFilePath = resource.toString();
-		String configFile = "user.txt";
-		//移除开通的file:/六个字符
-		proFilePath = proFilePath.substring(6);
-
-		//如果为window系统下,则把路径中的路径分隔符替换为window系统的文件路径分隔符
-		proFilePath = proFilePath.replace("/", java.io.File.separator);
-
-		//兼容处理最后一个字符是否为 window系统的文件路径分隔符,同时建立 properties 文件路径
-		//例如返回: D:\workspace\myproject01\WEB-INF\classes\config.properties
-		if(!proFilePath.endsWith(java.io.File.separator)){
-			proFilePath = proFilePath + java.io.File.separator + configFile;
-		} else {
-			proFilePath = proFilePath + configFile;
-		}
-		return proFilePath;
-	}
 }
 
 
