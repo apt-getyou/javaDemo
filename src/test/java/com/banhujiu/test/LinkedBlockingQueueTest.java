@@ -3,6 +3,8 @@ package com.banhujiu.test;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 /**
@@ -10,6 +12,7 @@ import org.junit.Test;
  * @date 2017/9/8 0008 15:09
  */
 public class LinkedBlockingQueueTest {
+	private final Logger logger = LogManager.getLogger(this.getClass());
 
 	@Test
 	public void test_Put_And_Add_When_Queue_Size_Larger_Then_Capacity() throws InterruptedException {
@@ -22,10 +25,10 @@ public class LinkedBlockingQueueTest {
 				queue.add(value++);
 			} catch (IllegalStateException e) {
 				e.printStackTrace();
-				System.out.println("队列已满，抛出异常");
+				logger.info("队列已满，抛出异常");
 				break;
 			}
-			System.out.println("队列长度" + queue.size());
+			logger.info("队列长度" + queue.size());
 		}
 
 		Thread.sleep(100);
@@ -36,7 +39,7 @@ public class LinkedBlockingQueueTest {
 		// put 当队列填满,会将当前线程挂起，等待队列内存在可用空间后继续存入
 		for (int i = 0; i < 5; i++) {
 			queue.put(value++);
-			System.out.println("队列长度" + queue.size());
+			logger.info("队列长度" + queue.size());
 		}
 
 	}
@@ -48,19 +51,19 @@ public class LinkedBlockingQueueTest {
 
 		for (int i = 0; i < 5; i++) {
 			queue.offer(value++);
-			System.out.println("队列长度" + queue.size());
+			logger.info("队列长度" + queue.size());
 		}
-		System.out.println(queue.toString());
+		logger.info(queue.toString());
 
 
 		queue.clear();
-		System.out.println("清空队列\n");
+		logger.info("清空队列\n");
 
 		for (int i = 0; i < 5; i++) {
 			queue.offer(value++, 2L, TimeUnit.SECONDS);
-			System.out.println("队列长度" + queue.size());
+			logger.info("队列长度" + queue.size());
 		}
-		System.out.println(queue.toString());
+		logger.info(queue.toString());
 
 	}
 
