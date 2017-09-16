@@ -48,5 +48,73 @@ public class StringTest {
 		 */
 	}
 
+	@Test
+	public void test_operate_string_efficiency() {
+		int begin = 0;
+		int size = 50000;
+		// 定义String变量原因。详见test_String_init
+		String str = "str";
+		{//String
+			String s = "";
+			long beginTime = System.currentTimeMillis();
+			for (int i = begin; i < size; i++) {
+				s += str;
+			}
+			logger.info("String操作字符对象,用时{}", System.currentTimeMillis() - beginTime);
+		}
+		{//StringBuilder
+			StringBuilder s = new StringBuilder();
+			long beginTime = System.currentTimeMillis();
+			for (int i = begin; i < size; i++) {
+				s.append(str);
+			}
+			logger.info("StringBuilder操作字符对象,用时{}", System.currentTimeMillis() - beginTime);
+		}
+		{//StringBuffer
+			StringBuffer s = new StringBuffer();
+			long beginTime = System.currentTimeMillis();
+			for (int i = begin; i < size; i++) {
+				s.append(str);
+			}
+			logger.info("StringBuffer操作字符对象,用时{}", System.currentTimeMillis() - beginTime);
+		}
+		/*
+		 * 结果
+		 * 16:06:20.812 [main] INFO  com.banhujiu.test.StringTest - String操作字符对象,用时4438
+		 * 16:06:20.815 [main] INFO  com.banhujiu.test.StringTest - StringBuilder操作字符对象,用时1
+		 * 16:06:20.817 [main] INFO  com.banhujiu.test.StringTest - StringBuffer操作字符对象,用时2
+		 *
+		 */
+	}
 
+
+	@Test
+	public void test_String_init() {
+		int begin = 0;
+		int size = 50000;
+		{//String
+			String s = "";
+			long beginTime = System.currentTimeMillis();
+			for (int i = begin; i < size; i++) {
+				s += String.valueOf(i);
+			}
+			logger.info("第一次String操作字符对象,用时{}", System.currentTimeMillis() - beginTime);
+		}
+
+		{//String
+			String s = "";
+			long beginTime = System.currentTimeMillis();
+			for (int i = begin; i < size; i++) {
+				s += String.valueOf(i);
+			}
+			logger.info("第二次String操作字符对象,用时{}", System.currentTimeMillis() - beginTime);
+		}
+		/*
+		16:12:56.028 [main] INFO  com.banhujiu.test.StringTest - 第一次String操作字符对象,用时6881
+		16:13:02.164 [main] INFO  com.banhujiu.test.StringTest - 第二次String操作字符对象,用时6133
+
+		相同的代码，第二次的运行速度明显快了不少
+		//TODO 解释原因
+		 */
+	}
 }
