@@ -17,7 +17,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/7/14 0014 16:51
  */
 public class Request implements ServletRequest {

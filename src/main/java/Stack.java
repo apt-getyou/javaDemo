@@ -4,7 +4,7 @@ import java.util.EmptyStackException;
 /**
  * 清空过期的对象引用
  *
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/2/28 0028 22:05
  */
 public class Stack {

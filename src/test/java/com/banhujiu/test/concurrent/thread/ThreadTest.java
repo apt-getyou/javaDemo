@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/12 0012 23:18
  */
 public class ThreadTest {

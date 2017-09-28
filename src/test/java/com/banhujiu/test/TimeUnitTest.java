@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/8 0008 15:01
  */
 public class TimeUnitTest {

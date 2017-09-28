@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/24 0024 22:12
  */
 public class MutexEvenGenerator extends IntGenerator {

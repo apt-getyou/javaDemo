@@ -1,6 +1,6 @@
 /**
  * 多个构造器参数时可考虑使用构建器
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/2/28 0028 18:36
  */
 public class NutritionFacts {

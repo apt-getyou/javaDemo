@@ -2,7 +2,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2016/7/19 0019 10:10
  */
 public class BigDecimalTest {

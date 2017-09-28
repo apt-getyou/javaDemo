@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/6/4 0004 16:51
  */
 public class Favorites {

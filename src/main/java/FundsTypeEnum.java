@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2016/7/10 0010 15:41
  */
 public enum FundsTypeEnum {

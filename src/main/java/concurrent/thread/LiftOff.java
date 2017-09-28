@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/12 0012 23:06
  */
 public class LiftOff implements Runnable {

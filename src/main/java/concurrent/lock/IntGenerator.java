@@ -1,7 +1,7 @@
 package concurrent.lock;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/24 0024 21:18
  */
 public abstract class IntGenerator {

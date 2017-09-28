@@ -16,7 +16,7 @@ import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/11 0011 11:15
  * transient 关键词
  * 1）一旦变量被transient修饰，变量将不再是对象持久化的一部分，该变量内容在序列化后无法获得访问。

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/6/4 0004 16:03
  */
 public class StackE<E> {

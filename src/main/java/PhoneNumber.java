@@ -4,7 +4,7 @@ import java.util.Map;
 /**
  * 覆盖equals时总要覆盖hashCode
  *
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/2/27 0027 14:20
  */
 public final class PhoneNumber {

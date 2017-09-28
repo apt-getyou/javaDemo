@@ -3,7 +3,7 @@ package proxy;
 import java.util.Collection;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/8/30 0030 21:40
  */
 public interface Bank {

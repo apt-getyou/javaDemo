@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/24 0024 17:26
  */
 public class JoinTest {

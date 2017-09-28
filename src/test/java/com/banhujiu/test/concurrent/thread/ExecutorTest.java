@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import org.junit.Test;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/24 0024 16:31
  */
 public class ExecutorTest {

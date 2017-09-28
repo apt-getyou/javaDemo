@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/8/30 0030 21:43
  */
 public class BankImpl implements Bank {

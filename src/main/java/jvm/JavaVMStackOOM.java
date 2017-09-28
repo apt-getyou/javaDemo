@@ -1,7 +1,7 @@
 package jvm;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/8/31 0031 23:20
  * JVM Args: -Xss64K
  * !!!!!不要再windows系统上执行以下代码

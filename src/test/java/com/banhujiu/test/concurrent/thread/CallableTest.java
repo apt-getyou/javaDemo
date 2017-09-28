@@ -12,7 +12,7 @@ import java.util.concurrent.Future;
 import org.junit.Test;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/24 0024 16:47
  */
 public class CallableTest {

@@ -1,5 +1,5 @@
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/6/3 0003 16:33
  */
 public class PermuteCalc {

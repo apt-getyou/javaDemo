@@ -1,7 +1,7 @@
 package smart.greeting;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2016/7/25 0025 21:55
  */
 public class GreetingProxy implements Greeting {

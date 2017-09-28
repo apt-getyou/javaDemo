@@ -1,7 +1,7 @@
 import model.Tank;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/8/27 0027 21:21
  */
 public class Assignment {

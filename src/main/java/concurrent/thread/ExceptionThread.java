@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/24 0024 20:48
  */
 public class ExceptionThread implements Runnable {

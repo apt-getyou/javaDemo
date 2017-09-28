@@ -10,7 +10,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletResponse;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/7/14 0014 17:01
  */
 public class Response implements ServletResponse {

@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/15 0015 13:54
  */
 public class StringTest {

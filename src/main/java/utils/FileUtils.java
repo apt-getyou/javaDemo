@@ -3,7 +3,7 @@ package utils;
 import java.net.URL;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/11 0011 14:09
  */
 public class FileUtils {

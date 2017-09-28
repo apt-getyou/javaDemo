@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * @author 刘博文
+ * @author banhujiu
  * @date 2017/9/14 0014 11:27
  */
 public class ForeachRemoveTest {
