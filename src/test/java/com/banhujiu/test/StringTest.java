@@ -127,7 +127,6 @@ public class StringTest {
 
 
 	@Test
-	@SuppressWarnings({"StringEquality", "StringBufferReplaceableByString", "ConstantConditions", "RedundantStringConstructorCall"})
 	public void test_string_create() {
 		String a = new StringBuilder("中国").append("很大").toString();
 		System.out.println(a.intern() == a);//true
