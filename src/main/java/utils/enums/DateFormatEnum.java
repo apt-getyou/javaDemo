@@ -26,14 +26,13 @@ public enum DateFormatEnum {
 
 	public static Date formatDate(String sourceDate) {
 		if (sourceDate == null) {
-			return new Date();
+			throw new NullPointerException();
 		}
 		Date parse = null;
 		for (DateFormatEnum anEnum : DateFormatEnum.values()) {
 			try {
 				parse = anEnum.format.parse(sourceDate);
 			} catch (ParseException e) {
-				e.printStackTrace();
 				continue;
 			}
 			break;
