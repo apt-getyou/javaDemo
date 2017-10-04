@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 /**
@@ -12,11 +14,14 @@ import org.junit.Test;
  * @date 2017/9/14 0014 11:27
  */
 public class ForeachRemoveTest {
+	private final Logger logger = LogManager.getLogger(this.getClass());
+
 	@Test
 	public void test_foreach_remove() {
 		List<Long> list = buildList(10);
 		try {
 			for (Long aLong : list) {
+				logger.info("当前list值为{},未触发fast-fail", aLong);
 				if (aLong == 6) {
 					list.remove(aLong);
 				}

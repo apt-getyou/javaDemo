@@ -8,6 +8,7 @@ import org.junit.Test;
  * @author banhujiu
  * @date 2017/9/15 0015 13:54
  */
+@SuppressWarnings("ALL")
 public class StringTest {
 	private final Logger logger = LogManager.getLogger(this.getClass());
 
