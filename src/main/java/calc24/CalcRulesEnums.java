@@ -43,4 +43,10 @@ public enum CalcRulesEnums {
 		}
 		return sourceEnums.getPriority() > targetEnums.getPriority();
 	}
+
+
+	@Override
+	public String toString() {
+		return String.valueOf(calc);
+	}
 }
