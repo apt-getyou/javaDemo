@@ -1,6 +1,10 @@
 package com.banhujiu.test;
 
 import calc24.CalcExpression;
+import calc24.Permutations;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -14,8 +18,29 @@ public class CalcExpression24Test {
 		String a1 = "15 - 6 * 3 6 + 693 + (1 +  2) + 233  ";
 		String a2 = "15  - 36 * 6 + 693 + (1+2)";
 		String a3 = "1+((2+3)×4)-5";
+		String a5 = "((1+1) + 2) * 6";
+		String a6 = "((8-5) + 1) * 6";
 		System.out.println(CalcExpression.calcPostfixExpression(a1));
 		System.out.println(CalcExpression.calcPostfixExpression(a2));
 		System.out.println(CalcExpression.calcPostfixExpression(a3));
+		System.out.println(CalcExpression.calcPostfixExpression(a5));
+		System.out.println(CalcExpression.calcPostfixExpression(a6));
+	}
+
+	@Test
+	public void test_calc_permutations() {
+		Permutations permutations = new Permutations();
+		List<Integer> list = new ArrayList<>();
+		for (int i = 0; i < 4; i++) {
+			list.add(i + 1);
+		}
+		System.out.println("排列");
+		for (List<Integer> integers : permutations.permute(list)) {
+			System.out.println(integers);
+		}
+		System.out.println("可重排列");
+		for (List<Integer> integers : permutations.permutationWithRepetition(list, 3)) {
+			System.out.println(integers);
+		}
 	}
 }

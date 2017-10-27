@@ -7,17 +7,18 @@ import java.util.Set;
 
 public class Permutations {
 	public <E extends Comparable<E>> List<List<E>> permute(List<E> list) {
-		List<List<E>> result = new ArrayList<>();
+		Set<List<E>> resultSet = new HashSet<>();
 		//start from an empty list
-		result.add(new ArrayList<>());
+		resultSet.add(new ArrayList<>());
 		for (E aNum : list) {
 			//list of list in current iteration of the array list
 			List<List<E>> current = new ArrayList<>();
-			for (List<E> l : result) {
+			for (List<E> l : resultSet) {
 				addIndex(aNum, current, l);
 			}
-			result = new ArrayList<>(current);
+			resultSet = new HashSet<>(current);
 		}
+		List<List<E>> result = new ArrayList<>(resultSet);
 		sortResult(result);
 		return result;
 	}
