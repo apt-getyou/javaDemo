@@ -16,7 +16,7 @@ import org.junit.Test;
  */
 public class WaxOMaticTest {
 	@Test
-	public void test() throws InterruptedException {
+	public void test_wax_on_wax_off() throws InterruptedException {
 		Car car = new Car();
 		ExecutorService exec = Executors.newCachedThreadPool();
 		exec.execute(new WaxOff(car));
