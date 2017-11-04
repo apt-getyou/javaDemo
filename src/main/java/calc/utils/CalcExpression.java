@@ -1,5 +1,6 @@
-package calc24;
+package calc.utils;
 
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -7,16 +8,17 @@ import java.util.Stack;
  * @date 2017/10/18 0018 17:00
  */
 public class CalcExpression {
+	private static final String number = "0123456789";
+
 	/**
 	 * 中缀表达式转换为后缀表达式
 	 *
 	 * bug1 连续两个数， 未报异常 ， 即 3 4 两个数会被认为34
 	 */
-	public static String calcPostfixExpression(String input) {
+	public static String toPostfixExpression(String input) {
 		if (input == null) {
 			throw new NullPointerException();
 		}
-		String number = "0123456789";
 		char[] split = input.trim().toCharArray();
 		Stack<Character> s1 = new Stack<>();
 		Stack<String> s2 = new Stack<>();
@@ -76,4 +78,22 @@ public class CalcExpression {
 		}
 		return resultSb.toString();
 	}
+
+	public static int calcPostfixExpression(List<String> list) {
+		Stack<Integer> s1 = new Stack<>();
+		for (String s : list) {
+			if (number.contains(s)) {
+				s1.push(Integer.valueOf(s));
+			} else {
+				if (s1.size() < 2) {
+					throw new RuntimeException("表达式错误");
+				}
+				Integer rightNum = s1.pop();
+				Integer leftNum = s1.pop();
+				s1.push(CalcRulesEnums.calc(s, leftNum, rightNum));
+			}
+		}
+		return s1.pop();
+	}
+
 }

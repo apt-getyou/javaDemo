@@ -1,4 +1,4 @@
-package calc24;
+package calc.utils;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Permutations {
-	public <E extends Comparable<E>> List<List<E>> permute(List<E> list) {
+	public static <E extends Comparable<E>> List<List<E>> permute(List<E> list) {
 		Set<List<E>> resultSet = new HashSet<>();
 		//start from an empty list
 		resultSet.add(new ArrayList<>());
@@ -26,7 +26,7 @@ public class Permutations {
 	/**
 	 * 可重排列
 	 */
-	public <E extends Comparable<E>> List<List<E>> permutationWithRepetition(List<E> list, int size) {
+	public static <E extends Comparable<E>> List<List<E>> permutationWithRepetition(List<E> list, int size) {
 		Set<List<E>> resultSet = new HashSet<>();
 		resultSet.add(new ArrayList<>());
 		for (int i = 0; i < size; i++) {
@@ -44,7 +44,7 @@ public class Permutations {
 		return result;
 	}
 
-	private <E extends Comparable<E>> void sortResult(List<List<E>> result) {
+	private static <E extends Comparable<E>> void sortResult(List<List<E>> result) {
 		result.sort((o1, o2) -> {
 			int size = Math.min(o1.size(), o2.size());
 			for (int i = 0; i < size; i++) {
@@ -57,7 +57,7 @@ public class Permutations {
 		});
 	}
 
-	private <E extends Comparable<E>> void addIndex(E aNum, List<List<E>> current, List<E> l) {
+	private static <E extends Comparable<E>> void addIndex(E aNum, List<List<E>> current, List<E> l) {
 		// # of locations to insert is largest index + 1
 		for (int j = 0; j < l.size() + 1; j++) {
 			// + add list[i] to different locations

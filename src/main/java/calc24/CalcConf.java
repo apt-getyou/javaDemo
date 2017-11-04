@@ -7,9 +7,11 @@ package calc24;
 public class CalcConf {
 	public static final int total = 24;
 
-	public static final int max = 1;
+	static final int max = 13;
 
-	public static final int min = 13;
+	static final int min = 1;
 
-	public static final int num = 4;
+	static final int num = 4;
+
+	public static final int maxQueueSize = Integer.MAX_VALUE;
 }

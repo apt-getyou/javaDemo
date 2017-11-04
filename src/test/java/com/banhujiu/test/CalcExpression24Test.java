@@ -1,7 +1,7 @@
 package com.banhujiu.test;
 
-import calc24.CalcExpression;
-import calc24.Permutations;
+import calc.utils.CalcExpression;
+import calc.utils.Permutations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +20,11 @@ public class CalcExpression24Test {
 		String a3 = "1+((2+3)×4)-5";
 		String a5 = "((1+1) + 2) * 6";
 		String a6 = "((8-5) + 1) * 6";
-		System.out.println(CalcExpression.calcPostfixExpression(a1));
-		System.out.println(CalcExpression.calcPostfixExpression(a2));
-		System.out.println(CalcExpression.calcPostfixExpression(a3));
-		System.out.println(CalcExpression.calcPostfixExpression(a5));
-		System.out.println(CalcExpression.calcPostfixExpression(a6));
+		System.out.println(CalcExpression.toPostfixExpression(a1));
+		System.out.println(CalcExpression.toPostfixExpression(a2));
+		System.out.println(CalcExpression.toPostfixExpression(a3));
+		System.out.println(CalcExpression.toPostfixExpression(a5));
+		System.out.println(CalcExpression.toPostfixExpression(a6));
 	}
 
 	@Test
