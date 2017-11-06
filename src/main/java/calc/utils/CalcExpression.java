@@ -1,5 +1,6 @@
 package calc.utils;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Stack;
 
@@ -79,17 +80,17 @@ public class CalcExpression {
 		return resultSb.toString();
 	}
 
-	public static int calcPostfixExpression(List<String> list) {
-		Stack<Integer> s1 = new Stack<>();
+	public static BigDecimal calcPostfixExpression(List<String> list) {
+		Stack<BigDecimal> s1 = new Stack<>();
 		for (String s : list) {
 			if (number.contains(s)) {
-				s1.push(Integer.valueOf(s));
+				s1.push(new BigDecimal(s));
 			} else {
 				if (s1.size() < 2) {
 					throw new RuntimeException("表达式错误");
 				}
-				Integer rightNum = s1.pop();
-				Integer leftNum = s1.pop();
+				BigDecimal rightNum = s1.pop();
+				BigDecimal leftNum = s1.pop();
 				s1.push(CalcRulesEnums.calc(s, leftNum, rightNum));
 			}
 		}

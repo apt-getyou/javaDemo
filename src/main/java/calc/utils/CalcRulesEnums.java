@@ -1,5 +1,6 @@
 package calc.utils;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,29 +14,29 @@ import java.util.Map;
 public enum CalcRulesEnums {
 	ADD('+', (short) 1) {
 		@Override
-		public int calc(int leftNum, int rightNum) {
-			return leftNum + rightNum;
+		public BigDecimal calc(BigDecimal leftNum, BigDecimal rightNum) {
+			return leftNum.add(rightNum);
 		}
 	},
 	SUB('-', (short) 1) {
 		@Override
-		public int calc(int leftNum, int rightNum) {
-			return leftNum - rightNum;
+		public BigDecimal calc(BigDecimal leftNum, BigDecimal rightNum) {
+			return leftNum.subtract(rightNum);
 		}
 	},
 	MUL('*', (short) 2) {
 		@Override
-		public int calc(int leftNum, int rightNum) {
-			return leftNum * rightNum;
+		public BigDecimal calc(BigDecimal leftNum, BigDecimal rightNum) {
+			return leftNum.multiply(rightNum);
 		}
 	},
 	DIV('/', (short) 2) {
 		@Override
-		public int calc(int leftNum, int rightNum) {
-			if (rightNum == 0) {
+		public BigDecimal calc(BigDecimal leftNum, BigDecimal rightNum) {
+			if (rightNum.compareTo(BigDecimal.ZERO) == 0) {
 				throw new RuntimeException("除法，被除数不能为0");
 			}
-			return leftNum / rightNum;
+			return leftNum.divide(rightNum, BigDecimal.ROUND_HALF_DOWN);
 		}
 	};
 
@@ -81,7 +82,7 @@ public enum CalcRulesEnums {
 		return String.valueOf(calc);
 	}
 
-	public static int calc(String s, Integer leftNum, Integer rightNum) {
+	public static BigDecimal calc(String s, BigDecimal leftNum, BigDecimal rightNum) {
 		if (s == null || leftNum == null || rightNum == null) {
 			throw new NullPointerException();
 		}
@@ -97,5 +98,5 @@ public enum CalcRulesEnums {
 		return enums.calc(leftNum, rightNum);
 	}
 
-	public abstract int calc(int leftNum, int rightNum);
+	public abstract BigDecimal calc(BigDecimal leftNum, BigDecimal rightNum);
 }

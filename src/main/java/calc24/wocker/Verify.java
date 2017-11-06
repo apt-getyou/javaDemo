@@ -5,6 +5,7 @@ import calc24.Calc24Model;
 import calc24.CalcConf;
 import calc24.queue.CalcPostfixExpressionQueue;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -32,15 +33,16 @@ public class Verify<T extends Comparable<T>> implements Runnable {
 		try {
 			while (!Thread.interrupted()) {
 				Map<Calc24Model<T>, List<List<String>>> take = calcPostfixExpressionQueue.take();
+				BigDecimal total = new BigDecimal(CalcConf.total);
 				for (Map.Entry<Calc24Model<T>, List<List<String>>> entry : take.entrySet()) {
 					for (List<String> list : entry.getValue()) {
-						int resultInt = 0;
+						BigDecimal resultInt = BigDecimal.ZERO;
 						try {
 							resultInt = CalcExpression.calcPostfixExpression(list);
 						} catch (Exception e) {
 //							logger.info("无法计算");
 						}
-						if (resultInt == CalcConf.total) {
+						if (resultInt.compareTo(total) == 0) {
 							result.computeIfAbsent(entry.getKey(), k -> new Vector<>());
 							result.get(entry.getKey()).add(list.toString());
 						}

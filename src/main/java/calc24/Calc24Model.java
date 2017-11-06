@@ -44,19 +44,18 @@ public class Calc24Model<T extends Comparable<T>> {
 	}
 
 	public void setRulesEnumsList(List<CalcRulesEnums> rulesEnumsList) {
-		this.rulesEnumsList = new ArrayList<>();
-		this.rulesEnumsList.addAll(rulesEnumsList);
+		if(rulesEnumsList != null){
+			this.rulesEnumsList = new ArrayList<>();
+			this.rulesEnumsList.addAll(rulesEnumsList);
+		}
 	}
 
 	public static <T extends Comparable<T>> Calc24Model<T> initByIntegerList(List<T> integers, List<CalcRulesEnums> rulesEnumsList) {
-		if (integers == null || rulesEnumsList == null) {
+		if (integers == null) {
 			throw new NullPointerException();
 		}
 		if (integers.size() != CalcConf.num) {
 			throw new RuntimeException("传入数据必须是" + CalcConf.num + "位");
-		}
-		if (rulesEnumsList.size() != CalcConf.num - 1) {
-			throw new RuntimeException("传入运算符必须是" + (CalcConf.num - 1) + "位");
 		}
 		Calc24Model<T> model = new Calc24Model<>();
 		model.setNums(integers);
