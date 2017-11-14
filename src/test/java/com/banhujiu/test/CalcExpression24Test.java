@@ -29,17 +29,16 @@ public class CalcExpression24Test {
 
 	@Test
 	public void test_calc_permutations() {
-		Permutations permutations = new Permutations();
 		List<Integer> list = new ArrayList<>();
 		for (int i = 0; i < 4; i++) {
 			list.add(i + 1);
 		}
 		System.out.println("排列");
-		for (List<Integer> integers : permutations.permute(list)) {
+		for (List<Integer> integers : Permutations.permute(list)) {
 			System.out.println(integers);
 		}
 		System.out.println("可重排列");
-		for (List<Integer> integers : permutations.permutationWithRepetition(list, 3)) {
+		for (List<Integer> integers : Permutations.permutationWithRepetition(list, 3)) {
 			System.out.println(integers);
 		}
 	}

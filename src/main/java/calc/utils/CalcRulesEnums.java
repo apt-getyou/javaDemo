@@ -36,7 +36,7 @@ public enum CalcRulesEnums {
 			if (rightNum.compareTo(BigDecimal.ZERO) == 0) {
 				throw new RuntimeException("除法，被除数不能为0");
 			}
-			return leftNum.divide(rightNum, BigDecimal.ROUND_HALF_DOWN);
+			return leftNum.divide(rightNum, 10, BigDecimal.ROUND_HALF_DOWN);
 		}
 	};
 
@@ -90,6 +90,7 @@ public enum CalcRulesEnums {
 		for (CalcRulesEnums calcRulesEnums : CalcRulesEnums.values()) {
 			if (s.equals(String.valueOf(calcRulesEnums.getCalc()))) {
 				enums = calcRulesEnums;
+				break;
 			}
 		}
 		if (enums == null) {

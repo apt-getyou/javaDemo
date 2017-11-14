@@ -1,6 +1,7 @@
 package calc.utils;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
@@ -9,8 +10,6 @@ import java.util.Stack;
  * @date 2017/10/18 0018 17:00
  */
 public class CalcExpression {
-	private static final String number = "0123456789";
-
 	/**
 	 * 中缀表达式转换为后缀表达式
 	 *
@@ -30,7 +29,7 @@ public class CalcExpression {
 			if (c == ' ') {
 				continue;
 			}
-			if (number.indexOf(c) != -1) {
+			if (NumberUtils.checkCharIsNumber(c)) {
 				num.append(c);
 				if (i == split.length - 1) {
 					s2.push(num.toString());
@@ -83,7 +82,7 @@ public class CalcExpression {
 	public static BigDecimal calcPostfixExpression(List<String> list) {
 		Stack<BigDecimal> s1 = new Stack<>();
 		for (String s : list) {
-			if (number.contains(s)) {
+			if (NumberUtils.checkStringIsNumber(s)) {
 				s1.push(new BigDecimal(s));
 			} else {
 				if (s1.size() < 2) {
@@ -97,4 +96,11 @@ public class CalcExpression {
 		return s1.pop();
 	}
 
+	public static BigDecimal calcPostfixExpression(String expression , String split){
+		if(expression == null || split == null){
+			throw new NullPointerException();
+		}
+		List<String> list = Arrays.asList(expression.split(split));
+		return calcPostfixExpression(list);
+	}
 }

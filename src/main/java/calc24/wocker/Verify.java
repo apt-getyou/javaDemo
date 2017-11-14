@@ -36,11 +36,12 @@ public class Verify<T extends Comparable<T>> implements Runnable {
 				BigDecimal total = new BigDecimal(CalcConf.total);
 				for (Map.Entry<Calc24Model<T>, List<List<String>>> entry : take.entrySet()) {
 					for (List<String> list : entry.getValue()) {
-						BigDecimal resultInt = BigDecimal.ZERO;
+						BigDecimal resultInt;
 						try {
 							resultInt = CalcExpression.calcPostfixExpression(list);
 						} catch (Exception e) {
 //							logger.info("无法计算");
+							continue;
 						}
 						if (resultInt.compareTo(total) == 0) {
 							result.computeIfAbsent(entry.getKey(), k -> new Vector<>());
