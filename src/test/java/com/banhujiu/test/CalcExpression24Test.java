@@ -20,11 +20,11 @@ public class CalcExpression24Test {
 		String a3 = "1+((2+3)×4)-5";
 		String a5 = "((1+1) + 2) * 6";
 		String a6 = "((8-5) + 1) * 6";
-		System.out.println(CalcExpression.toPostfixExpression(a1));
-		System.out.println(CalcExpression.toPostfixExpression(a2));
-		System.out.println(CalcExpression.toPostfixExpression(a3));
-		System.out.println(CalcExpression.toPostfixExpression(a5));
-		System.out.println(CalcExpression.toPostfixExpression(a6));
+		System.out.println(CalcExpression.infixExpressionToPostfixExpression(a1));
+		System.out.println(CalcExpression.infixExpressionToPostfixExpression(a2));
+		System.out.println(CalcExpression.infixExpressionToPostfixExpression(a3));
+		System.out.println(CalcExpression.infixExpressionToPostfixExpression(a5));
+		System.out.println(CalcExpression.infixExpressionToPostfixExpression(a6));
 	}
 
 	@Test

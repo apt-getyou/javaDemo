@@ -15,7 +15,7 @@ public class CalcExpression {
 	 *
 	 * bug1 连续两个数， 未报异常 ， 即 3 4 两个数会被认为34
 	 */
-	public static String toPostfixExpression(String input) {
+	public static String infixExpressionToPostfixExpression(String input) {
 		if (input == null) {
 			throw new NullPointerException();
 		}
